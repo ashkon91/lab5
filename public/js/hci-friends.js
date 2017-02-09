@@ -10,11 +10,19 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+
+	$("a.fName").click(function(e) {
+		e.preventDefault();
+		//Get Name
+		var name = $(this).first().text();
+		//Anagram and change
+		var newName = anagrammedName(name);
+		$(this).first().text(newName);
+	});
 }
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
-	
 	if (name == "Doug Engelbart") {
 		return "Notable Grudge";
 	} 
